@@ -17,6 +17,9 @@ class BlockingManager: ObservableObject {
     @Published var scheduleStart = DateComponents(hour: 22, minute: 0)  // 10 PM
     @Published var scheduleEnd   = DateComponents(hour: 8,  minute: 0)  // 8 AM
 
+    /// When true, the normal stop button is hidden — only a Claude-approved override can unblock.
+    @Published var claudeOverrideRequired = false
+
     // MARK: - Private
 
     private let store   = ManagedSettingsStore()
@@ -37,21 +40,23 @@ class BlockingManager: ObservableObject {
 
     // MARK: - Blocking
 
-    /// Apply restrictions immediately for the current selection.
-    func startBlocking() {
+    /// Apply restrictions. Pass `requireClaudeOverride: true` to lock the stop button.
+    func startBlocking(requireClaudeOverride: Bool = false) {
         guard !selection.applicationTokens.isEmpty ||
               !selection.categoryTokens.isEmpty else { return }
 
         store.shield.applications         = selection.applicationTokens.isEmpty ? nil : selection.applicationTokens
         store.shield.applicationCategories = selection.categoryTokens.isEmpty   ? nil : .specific(selection.categoryTokens)
         isBlocking = true
+        claudeOverrideRequired = requireClaudeOverride
     }
 
-    /// Remove all restrictions.
+    /// Remove all restrictions. Only callable directly when claudeOverrideRequired is false.
     func stopBlocking() {
         store.shield.applications          = nil
         store.shield.applicationCategories = nil
         isBlocking = false
+        claudeOverrideRequired = false
 
         if scheduleEnabled {
             cancelSchedule()

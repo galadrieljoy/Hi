@@ -12,6 +12,8 @@
         B003 /* BlockingManager.swift in Sources */     = {isa = PBXBuildFile; fileRef = A003; };
         B004 /* AppSelectionView.swift in Sources */    = {isa = PBXBuildFile; fileRef = A004; };
         B005 /* ScheduleView.swift in Sources */        = {isa = PBXBuildFile; fileRef = A005; };
+        B006 /* ClaudeService.swift in Sources */       = {isa = PBXBuildFile; fileRef = A008; };
+        B007 /* OverrideView.swift in Sources */        = {isa = PBXBuildFile; fileRef = A009; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
         A003 /* BlockingManager.swift */  = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlockingManager.swift;  path = AppBlocker/BlockingManager.swift;  sourceTree = "<group>"; };
         A004 /* AppSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppSelectionView.swift; path = AppBlocker/AppSelectionView.swift; sourceTree = "<group>"; };
         A005 /* ScheduleView.swift */     = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleView.swift;     path = AppBlocker/ScheduleView.swift;     sourceTree = "<group>"; };
+        A008 /* ClaudeService.swift */    = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClaudeService.swift;    path = AppBlocker/ClaudeService.swift;    sourceTree = "<group>"; };
+        A009 /* OverrideView.swift */     = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OverrideView.swift;     path = AppBlocker/OverrideView.swift;     sourceTree = "<group>"; };
         A006 /* Info.plist */             = {isa = PBXFileReference; lastKnownFileType = text.plist.xml;   name = Info.plist;             path = AppBlocker/Info.plist;             sourceTree = "<group>"; };
         A007 /* AppBlocker.entitlements */= {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AppBlocker.entitlements; path = AppBlocker/AppBlocker.entitlements; sourceTree = "<group>"; };
         PROD /* AppBlocker.app */         = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,7 +37,7 @@
         };
         SRC /* AppBlocker */ = {
             isa = PBXGroup;
-            children = (A001, A002, A003, A004, A005, A006, A007);
+            children = (A001, A002, A003, A004, A005, A006, A007, A008, A009);
             name = AppBlocker;
             sourceTree = "<group>";
         };
@@ -89,7 +93,7 @@
         SOURCES /* Sources */ = {
             isa = PBXSourcesBuildPhase;
             buildActionMask = 2147483647;
-            files = (B001, B002, B003, B004, B005);
+            files = (B001, B002, B003, B004, B005, B006, B007);
             runOnlyForDeploymentPostprocessing = 0;
         };
 /* End PBXSourcesBuildPhase section */

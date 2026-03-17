@@ -6,7 +6,7 @@ struct ContentView: View {
     @State private var showPicker  = false
     @State private var activeTab: Tab = .home
 
-    enum Tab { case home, schedule, settings }
+    enum Tab { case home, schedule, override, settings }
 
     var body: some View {
         Group {
@@ -22,10 +22,16 @@ struct ContentView: View {
                         .tabItem { Label("Schedule", systemImage: "clock.fill") }
                         .tag(Tab.schedule)
 
+                    OverrideView()
+                        .tabItem { Label("Ask Claude", systemImage: "bubble.left.and.bubble.right.fill") }
+                        .tag(Tab.override)
+
                     settingsTab
                         .tabItem { Label("Settings", systemImage: "gearshape.fill") }
                         .tag(Tab.settings)
                 }
+                // Badge the Override tab when blocking is active & Claude lock is on
+                .onChange(of: manager.isBlocking) { _, _ in }
             }
         }
         .familyActivityPicker(isPresented: $showPicker, selection: $manager.selection)
@@ -73,6 +79,7 @@ struct ContentView: View {
             VStack(spacing: 20) {
                 statusCard
                 appSelectionCard
+                claudeLockToggle
                 blockButton
                 Spacer()
             }
@@ -86,11 +93,17 @@ struct ContentView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(manager.isBlocking ? "Blocking Active" : "Not Blocking")
                     .font(.headline)
-                Text(manager.isBlocking
-                     ? "\(manager.selection.applicationTokens.count) app(s) blocked"
-                     : "Tap below to start blocking")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                if manager.isBlocking && manager.claudeOverrideRequired {
+                    Label("Claude override required to unlock", systemImage: "lock.fill")
+                        .font(.subheadline)
+                        .foregroundStyle(.orange)
+                } else {
+                    Text(manager.isBlocking
+                         ? "\(manager.selection.applicationTokens.count) app(s) blocked"
+                         : "Tap below to start blocking")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
             Spacer()
             Image(systemName: manager.isBlocking ? "shield.fill" : "shield.slash")
@@ -127,25 +140,63 @@ struct ContentView: View {
                     .fill(Color(.systemGray6))
             )
         }
+        .disabled(manager.isBlocking)
+    }
+
+    private var claudeLockToggle: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 2) {
+                Label("Require Claude to unlock", systemImage: "brain")
+                    .font(.subheadline.bold())
+                Text("You must convince Claude to remove the block")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            Spacer()
+            Toggle("", isOn: $manager.claudeOverrideRequired)
+                .labelsHidden()
+                .disabled(manager.isBlocking)
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(.systemGray6))
+        )
     }
 
     private var blockButton: some View {
-        Button {
-            if manager.isBlocking {
-                manager.stopBlocking()
+        Group {
+            if manager.isBlocking && manager.claudeOverrideRequired {
+                // Locked — point user to the Override tab
+                Button {
+                    activeTab = .override
+                } label: {
+                    Label("Talk to Claude to Unlock", systemImage: "bubble.left.and.bubble.right.fill")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.orange)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                }
             } else {
-                manager.startBlocking()
+                Button {
+                    if manager.isBlocking {
+                        manager.stopBlocking()
+                    } else {
+                        manager.startBlocking(requireClaudeOverride: manager.claudeOverrideRequired)
+                    }
+                } label: {
+                    Label(manager.isBlocking ? "Stop Blocking" : "Start Blocking",
+                          systemImage: manager.isBlocking ? "xmark.shield" : "checkmark.shield")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(manager.isBlocking ? Color.red : Color.blue)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                }
+                .disabled(manager.selection.applicationTokens.isEmpty && !manager.isBlocking)
             }
-        } label: {
-            Label(manager.isBlocking ? "Stop Blocking" : "Start Blocking",
-                  systemImage: manager.isBlocking ? "xmark.shield" : "checkmark.shield")
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(manager.isBlocking ? Color.red : Color.blue)
-                .foregroundStyle(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 14))
         }
-        .disabled(manager.selection.applicationTokens.isEmpty && !manager.isBlocking)
     }
 
     // MARK: - Settings Tab
@@ -162,6 +213,11 @@ struct ContentView: View {
                         manager.stopBlocking()
                     } label: {
                         Label("Clear All Restrictions", systemImage: "trash")
+                    }
+                    .disabled(manager.claudeOverrideRequired && manager.isBlocking)
+                } footer: {
+                    if manager.claudeOverrideRequired && manager.isBlocking {
+                        Text("Claude override is active. Use the Ask Claude tab to unlock.")
                     }
                 }
             }
