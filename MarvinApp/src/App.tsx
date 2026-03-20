@@ -13,6 +13,7 @@ import { ProjectView } from './components/ProjectView';
 import { ProjectsView } from './components/ProjectsView';
 import { DoneView } from './components/DoneView';
 import { StatsView } from './components/StatsView';
+import { LightCastView } from './components/LightCastView';
 import { NagSystem } from './components/NagSystem';
 
 function MainApp({ userId, userEmail }: { userId: string; userEmail: string }) {
@@ -29,8 +30,9 @@ function MainApp({ userId, userEmail }: { userId: string; userEmail: string }) {
       case 'projects': return <ProjectsView store={store} />;
       case 'project':  return selectedProjectId ? <ProjectView store={store} projectId={selectedProjectId} /> : <ProjectsView store={store} />;
       case 'done':     return <DoneView store={store} />;
-      case 'stats':    return <StatsView store={store} />;
-      default:         return <TodayView store={store} />;
+      case 'stats':      return <StatsView store={store} />;
+      case 'lightcast':  return <LightCastView />;
+      default:           return <TodayView store={store} />;
     }
   }
 

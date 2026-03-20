@@ -1,4 +1,4 @@
-import { Calendar, Inbox, CalendarDays, FolderOpen, CheckSquare, BarChart2, Plus, Star } from 'lucide-react';
+import { Calendar, Inbox, CalendarDays, FolderOpen, CheckSquare, BarChart2, Plus, Star, Flashlight } from 'lucide-react';
 import type { AppStore } from '../store';
 import type { View, Project } from '../types';
 import { todayString } from '../utils';
@@ -102,6 +102,7 @@ export function Sidebar({ store, isOpen, onClose }: Props) {
         {navItem('upcoming', <CalendarDays size={16} />, 'Upcoming')}
         {navItem('done', <CheckSquare size={16} />, 'Done', totalDone)}
         {navItem('stats', <BarChart2 size={16} />, 'Stats')}
+        {navItem('lightcast', <Flashlight size={16} />, 'Light Cast')}
       </div>
 
       {/* Projects */}

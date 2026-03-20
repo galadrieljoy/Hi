@@ -47,7 +47,7 @@ export interface Project {
   order: number;
 }
 
-export type View = 'today' | 'inbox' | 'upcoming' | 'projects' | 'project' | 'done' | 'stats';
+export type View = 'today' | 'inbox' | 'upcoming' | 'projects' | 'project' | 'done' | 'stats' | 'lightcast';
 
 export interface AppState {
   tasks: Task[];
