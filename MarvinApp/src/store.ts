@@ -1,5 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import type { AppState, Task, Project, Label, View } from './types';
+import { loadCloudState, saveCloudState } from './lib/supabase';
 
 const STORAGE_KEY = 'marvin-app-state';
 
@@ -78,18 +79,42 @@ function saveState(state: AppState) {
   } catch {}
 }
 
-export function useAppStore() {
+export function useAppStore(userId?: string) {
   const [state, setState] = useState<AppState>(loadState);
+  const [cloudSyncing, setCloudSyncing] = useState(false);
+  const initialLoadDone = useRef(false);
 
+  // On login: fetch cloud state and replace local state
+  useEffect(() => {
+    if (!userId) return;
+    setCloudSyncing(true);
+    loadCloudState(userId).then(cloudState => {
+      if (cloudState) {
+        const merged = { ...defaultState, ...cloudState };
+        setState(merged);
+        saveState(merged);
+      }
+      initialLoadDone.current = true;
+      setCloudSyncing(false);
+    });
+  }, [userId]);
+
+  // Save to localStorage on every change
   useEffect(() => {
     saveState(state);
   }, [state]);
 
+  // Debounced save to Supabase (1s after last change)
+  useEffect(() => {
+    if (!userId || !initialLoadDone.current) return;
+    const timer = setTimeout(() => {
+      saveCloudState(userId, state);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [state, userId]);
+
   const update = useCallback((updater: (s: AppState) => AppState) => {
-    setState(prev => {
-      const next = updater(prev);
-      return next;
-    });
+    setState(prev => updater(prev));
   }, []);
 
   // Tasks
@@ -184,6 +209,7 @@ export function useAppStore() {
 
   return {
     state,
+    cloudSyncing,
     addTask,
     updateTask,
     deleteTask,
