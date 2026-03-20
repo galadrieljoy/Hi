@@ -20,6 +20,7 @@ export function TaskModal({ task, store, onClose }: Props) {
   const [projectId, setProjectId] = useState(task.projectId);
   const [selectedLabels, setSelectedLabels] = useState<string[]>(task.labelIds);
   const [dueDate, setDueDate] = useState(task.dueDate || '');
+  const [plannedTime, setPlannedTime] = useState(task.plannedTime || '');
   const [newSubtask, setNewSubtask] = useState('');
   const [points, setPoints] = useState(task.points);
 
@@ -34,6 +35,7 @@ export function TaskModal({ task, store, onClose }: Props) {
       projectId,
       labelIds: selectedLabels,
       dueDate: dueDate || undefined,
+      plannedTime: plannedTime || undefined,
       points,
     });
     onClose();
@@ -168,6 +170,30 @@ export function TaskModal({ task, store, onClose }: Props) {
                 max={100}
                 className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white outline-none"
               />
+            </div>
+          </div>
+
+          {/* Planned time (nag) */}
+          <div>
+            <label className="text-xs text-orange-400/80 mb-1 block">⏰ I'll do this by... (starts nagging if missed)</label>
+            <div className="flex gap-2 items-center">
+              <input
+                type="time"
+                value={plannedTime}
+                onChange={e => setPlannedTime(e.target.value)}
+                className="bg-white/5 border border-orange-400/30 rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-orange-400/60"
+              />
+              {plannedTime && (
+                <button
+                  onClick={() => setPlannedTime('')}
+                  className="text-xs text-white/30 hover:text-white/60 transition-colors"
+                >
+                  Clear
+                </button>
+              )}
+              {!plannedTime && (
+                <span className="text-xs text-white/30">Optional — set a commitment time</span>
+              )}
             </div>
           </div>
 

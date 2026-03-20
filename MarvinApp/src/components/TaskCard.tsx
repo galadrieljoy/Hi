@@ -4,6 +4,7 @@ import type { Task } from '../types';
 import type { AppStore } from '../store';
 import { TaskModal } from './TaskModal';
 import { isTimerRunning, getTotalTime, formatDuration, getPriorityColor, todayString, formatDate } from '../utils';
+import { getNagLevel } from './NagSystem';
 
 interface Props {
   task: Task;
@@ -32,13 +33,31 @@ export function TaskCard({ task, store, showProject = false }: Props) {
   }
 
   const priorityColor = getPriorityColor(task.priority);
+  const nagLevel = getNagLevel(task);
+
+  const nagClass =
+    nagLevel >= 3
+      ? 'border-red-500/70 bg-red-900/20 animate-[nagPulse_0.8s_ease-in-out_infinite]'
+      : nagLevel === 2
+      ? 'border-orange-400/60 bg-orange-900/15 animate-pulse'
+      : nagLevel === 1
+      ? 'border-orange-400/30 bg-orange-900/10'
+      : '';
 
   return (
     <>
+      <style>{`
+        @keyframes nagPulse {
+          0%, 100% { border-color: rgba(239,68,68,0.7); box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+          50% { border-color: rgba(239,68,68,1); box-shadow: 0 0 8px 2px rgba(239,68,68,0.4); }
+        }
+      `}</style>
       <div
         className={`group flex items-start gap-3 p-3 rounded-xl border transition-all cursor-pointer ${
           task.done
             ? 'bg-white/3 border-white/5 opacity-50'
+            : nagLevel > 0
+            ? nagClass
             : 'bg-white/5 border-white/10 hover:bg-white/8 hover:border-white/20'
         }`}
         onClick={() => setShowModal(true)}
@@ -104,6 +123,11 @@ export function TaskCard({ task, store, showProject = false }: Props) {
             {totalTime > 0 && (
               <span className="flex items-center gap-1 text-xs text-white/40">
                 <Clock size={10} /> {formatDuration(totalTime)}
+              </span>
+            )}
+            {task.plannedTime && !task.done && (
+              <span className={`text-xs flex items-center gap-1 ${nagLevel > 0 ? 'text-orange-400' : 'text-white/40'}`}>
+                ⏰ by {task.plannedTime}
               </span>
             )}
             {task.dueDate && (

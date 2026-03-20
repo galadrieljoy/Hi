@@ -34,6 +34,7 @@ export interface Task {
   createdAt: number;
   order: number;
   isStarred: boolean;
+  plannedTime?: string; // 'HH:MM' - the time user commits to doing this task today
 }
 
 export interface Project {

@@ -8,6 +8,7 @@ import { ProjectView } from './components/ProjectView';
 import { ProjectsView } from './components/ProjectsView';
 import { DoneView } from './components/DoneView';
 import { StatsView } from './components/StatsView';
+import { NagSystem } from './components/NagSystem';
 
 function App() {
   const store = useAppStore();
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <div className="flex h-screen bg-[#1a1a2e] text-white overflow-hidden">
+      <NagSystem store={store} />
       <Sidebar store={store} />
       <main className="flex-1 overflow-hidden flex flex-col">
         {renderView()}
