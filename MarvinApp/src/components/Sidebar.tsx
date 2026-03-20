@@ -5,6 +5,8 @@ import { todayString } from '../utils';
 
 interface Props {
   store: AppStore;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
 const PROJECT_COLORS = [
@@ -12,7 +14,7 @@ const PROJECT_COLORS = [
   '#db2777', '#0891b2', '#65a30d', '#7c3aed', '#ea580c',
 ];
 
-export function Sidebar({ store }: Props) {
+export function Sidebar({ store, isOpen, onClose }: Props) {
   const { state, setView, addProject } = store;
   const { selectedView, selectedProjectId, projects, tasks, totalPoints, level } = state;
 
@@ -43,7 +45,7 @@ export function Sidebar({ store }: Props) {
     return (
       <button
         key={label}
-        onClick={() => setView(view, projectId)}
+        onClick={() => { setView(view, projectId); onClose?.(); }}
         className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all ${
           active
             ? 'bg-white/15 text-white font-medium'
@@ -60,7 +62,12 @@ export function Sidebar({ store }: Props) {
   };
 
   return (
-    <aside className="w-60 flex-shrink-0 flex flex-col bg-black/30 border-r border-white/10 h-full overflow-y-auto">
+    <aside className={`
+      w-60 flex-shrink-0 flex flex-col bg-[#13132a] border-r border-white/10 h-full overflow-y-auto
+      fixed inset-y-0 left-0 z-50 transition-transform duration-200
+      md:relative md:translate-x-0 md:z-auto
+      ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+    `}>
       {/* App header */}
       <div className="px-4 py-5">
         <div className="flex items-center gap-2 mb-1">
@@ -115,7 +122,7 @@ export function Sidebar({ store }: Props) {
             return (
               <button
                 key={project.id}
-                onClick={() => setView('project', project.id)}
+                onClick={() => { setView('project', project.id); onClose?.(); }}
                 className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-all ${
                   active
                     ? 'bg-white/15 text-white font-medium'
@@ -135,7 +142,7 @@ export function Sidebar({ store }: Props) {
             );
           })}
           <button
-            onClick={() => setView('projects')}
+            onClick={() => { setView('projects'); onClose?.(); }}
             className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-all ${
               selectedView === 'projects'
                 ? 'bg-white/15 text-white font-medium'
