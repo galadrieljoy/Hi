@@ -28,6 +28,8 @@ class BudgetStore: ObservableObject {
     // MARK: - iCloud change detection
 
     private func setupMetadataQuery() {
+        // Only set up iCloud change detection when iCloud is actually available
+        guard FileManager.default.url(forUbiquityContainerIdentifier: nil) != nil else { return }
         let q = NSMetadataQuery()
         q.searchScopes = [NSMetadataQueryUbiquitousDocumentsScope]
         q.predicate = NSPredicate(format: "%K LIKE '*.json'", NSMetadataItemFSNameKey)
