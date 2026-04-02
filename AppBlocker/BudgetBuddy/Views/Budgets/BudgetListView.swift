@@ -5,7 +5,7 @@ struct BudgetListView: View {
     @EnvironmentObject var store: BudgetStore
     @State private var selectedMonth = Calendar.current.component(.month, from: Date())
     @State private var selectedYear  = Calendar.current.component(.year,  from: Date())
-    @State private var setBudgetFor: String?
+    @State private var setBudgetFor: IdentifiableString?
     @State private var showAddCashBudget = false
     @State private var editCashBudget: CashBudget?
     @State private var showAddSubscription = false
@@ -76,7 +76,7 @@ struct BudgetListView: View {
                 }
             }
             .sheet(item: $setBudgetFor) { cat in
-                SetBudgetView(categoryName: cat, month: selectedMonth, year: selectedYear)
+                SetBudgetView(categoryName: cat.id, month: selectedMonth, year: selectedYear)
             }
             .sheet(isPresented: $showAddCashBudget) { SetCashBudgetView() }
             .sheet(item: $editCashBudget) { b in SetCashBudgetView(existing: b) }
@@ -114,7 +114,7 @@ struct BudgetListView: View {
             }
         }
         .contentShape(Rectangle())
-        .onTapGesture { setBudgetFor = cat.name }
+        .onTapGesture { setBudgetFor = IdentifiableString(cat.name) }
     }
 
     private func subscriptionRow(_ sub: Subscription) -> some View {
@@ -163,6 +163,7 @@ extension Int {
     }
 }
 
-extension String: Identifiable {
-    public var id: String { self }
+private struct IdentifiableString: Identifiable {
+    let id: String
+    init(_ value: String) { self.id = value }
 }
