@@ -98,7 +98,7 @@ struct NetWorthView: View {
             HStack {
                 Text("ASSETS").font(.caption.bold()).foregroundStyle(.secondary)
                 Spacer()
-                Text("$\(String(format: "%.0f", totalAssets))").font(.caption.bold()).foregroundStyle(.green)
+                Text("$\(String(format: "%.0f", totalAssets))").font(.caption.bold()).foregroundStyle(Color.green)
             }
             ForEach(store.assets) { asset in
                 HStack {

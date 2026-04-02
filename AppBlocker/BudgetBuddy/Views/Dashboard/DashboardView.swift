@@ -110,13 +110,18 @@ struct DashboardView: View {
                     .padding()
             } else {
                 Chart(data, id: \.name) { item in
-                    SectorMark(
-                        angle: .value("Amount", item.amount),
-                        innerRadius: .ratio(0.55),
-                        angularInset: 1.5
-                    )
-                    .foregroundStyle(item.color)
-                    .cornerRadius(4)
+                    if #available(iOS 17.0, *) {
+                        SectorMark(
+                            angle: .value("Amount", item.amount),
+                            innerRadius: .ratio(0.55),
+                            angularInset: 1.5
+                        )
+                        .foregroundStyle(item.color)
+                        .cornerRadius(4)
+                    } else {
+                        BarMark(x: .value("Category", item.name), y: .value("Amount", item.amount))
+                            .foregroundStyle(item.color)
+                    }
                 }
                 .frame(height: 180)
             }
