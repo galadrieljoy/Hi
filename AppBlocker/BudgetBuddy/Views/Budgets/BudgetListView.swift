@@ -105,7 +105,7 @@ struct BudgetListView: View {
                         .foregroundStyle(.secondary)
                     Text("Set limit")
                         .font(.caption)
-                        .foregroundStyle(.accentColor)
+                        .foregroundStyle(Color.accentColor)
                 }
             }
             if lim != nil {
