@@ -61,11 +61,11 @@ struct NetWorthView: View {
             HStack(spacing: 24) {
                 VStack(spacing: 2) {
                     Text("Assets").font(.caption).foregroundStyle(.secondary)
-                    Text("$\(String(format: "%.0f", totalAssets))").font(.subheadline.monospacedDigit().bold()).foregroundStyle(.green)
+                    Text("$\(String(format: "%.0f", totalAssets))").font(.subheadline.monospacedDigit().bold()).foregroundStyle(Color.green)
                 }
                 VStack(spacing: 2) {
                     Text("Liabilities").font(.caption).foregroundStyle(.secondary)
-                    Text("$\(String(format: "%.0f", totalLiabilities))").font(.subheadline.monospacedDigit().bold()).foregroundStyle(.red)
+                    Text("$\(String(format: "%.0f", totalLiabilities))").font(.subheadline.monospacedDigit().bold()).foregroundStyle(Color.red)
                 }
             }
         }
@@ -125,13 +125,13 @@ struct NetWorthView: View {
             HStack {
                 Text("LIABILITIES").font(.caption.bold()).foregroundStyle(.secondary)
                 Spacer()
-                Text("$\(String(format: "%.0f", totalLiabilities))").font(.caption.bold()).foregroundStyle(.red)
+                Text("$\(String(format: "%.0f", totalLiabilities))").font(.caption.bold()).foregroundStyle(Color.red)
             }
             ForEach(store.liabilities) { liability in
                 HStack {
                     Label(liability.name, systemImage: liability.type.sfSymbol).font(.subheadline)
                     Spacer()
-                    Text("$\(String(format: "%.0f", liability.balance))").font(.subheadline.monospacedDigit()).foregroundStyle(.red)
+                    Text("$\(String(format: "%.0f", liability.balance))").font(.subheadline.monospacedDigit()).foregroundStyle(Color.red)
                 }
                 .swipeActions {
                     Button(role: .destructive) { store.deleteLiability(liability) } label: { Label("Delete", systemImage: "trash") }
