@@ -1,5 +1,9 @@
 import Foundation
 
+enum BudgetClaudeError: Error {
+    case apiError(String)
+}
+
 actor BudgetClaudeService {
     static let shared = BudgetClaudeService()
 
@@ -112,7 +116,7 @@ actor BudgetClaudeService {
 
         guard let http = response as? HTTPURLResponse, http.statusCode == 200 else {
             let msg = String(data: data, encoding: .utf8) ?? "unknown error"
-            throw ClaudeError.apiError(msg)
+            throw BudgetClaudeError.apiError(msg)
         }
 
         let decoded  = try JSONDecoder().decode(ResponseBody.self, from: data)

@@ -50,7 +50,6 @@ class BudgetStore: ObservableObject {
     }
 
     private func load<T: Decodable>(_ type: T.Type, from file: String, default value: T) -> T {
-        (try? (PersistenceStore.shared as AnyObject).perform { }) ?? value
         // Synchronous load on init (called before async tasks can run)
         guard let url = resolvedURLSync(file) else { return value }
         guard let data = try? Data(contentsOf: url) else { return value }

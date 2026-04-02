@@ -71,7 +71,7 @@ struct AssistantView: View {
                     } label: {
                         Image(systemName: "arrow.up.circle.fill")
                             .font(.system(size: 32))
-                            .foregroundStyle(input.isEmpty || isLoading ? .secondary : .accentColor)
+                            .foregroundStyle(input.isEmpty || isLoading ? Color.secondary : Color.accentColor)
                     }
                     .disabled(input.isEmpty || isLoading)
                 }
