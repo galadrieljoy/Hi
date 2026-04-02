@@ -14,6 +14,52 @@
         B005 /* ScheduleView.swift in Sources */        = {isa = PBXBuildFile; fileRef = A005; };
         B006 /* ClaudeService.swift in Sources */       = {isa = PBXBuildFile; fileRef = A008; };
         B007 /* OverrideView.swift in Sources */        = {isa = PBXBuildFile; fileRef = A009; };
+        D001 /* BudgetBuddyApp.swift in Sources */              = {isa = PBXBuildFile; fileRef = C001; };
+        D002 /* BudgetLimit.swift in Sources */                 = {isa = PBXBuildFile; fileRef = C002; };
+        D003 /* CashBudget.swift in Sources */                  = {isa = PBXBuildFile; fileRef = C003; };
+        D004 /* Category.swift in Sources */                    = {isa = PBXBuildFile; fileRef = C004; };
+        D005 /* InvestmentAccount.swift in Sources */           = {isa = PBXBuildFile; fileRef = C005; };
+        D006 /* InvestmentContribution.swift in Sources */      = {isa = PBXBuildFile; fileRef = C006; };
+        D007 /* LinkedAccount.swift in Sources */               = {isa = PBXBuildFile; fileRef = C007; };
+        D008 /* NetWorth.swift in Sources */                    = {isa = PBXBuildFile; fileRef = C008; };
+        D009 /* PaymentMethod.swift in Sources */               = {isa = PBXBuildFile; fileRef = C009; };
+        D010 /* ProposedTransaction.swift in Sources */         = {isa = PBXBuildFile; fileRef = C010; };
+        D011 /* Subscription.swift in Sources */                = {isa = PBXBuildFile; fileRef = C011; };
+        D012 /* Transaction.swift in Sources */                 = {isa = PBXBuildFile; fileRef = C012; };
+        D013 /* BudgetClaudeService.swift in Sources */         = {isa = PBXBuildFile; fileRef = C013; };
+        D014 /* PlaidCategoryMapper.swift in Sources */         = {isa = PBXBuildFile; fileRef = C014; };
+        D015 /* PlaidService.swift in Sources */                = {isa = PBXBuildFile; fileRef = C015; };
+        D016 /* BudgetStore.swift in Sources */                 = {isa = PBXBuildFile; fileRef = C016; };
+        D017 /* PersistenceStore.swift in Sources */            = {isa = PBXBuildFile; fileRef = C017; };
+        D018 /* AssistantView.swift in Sources */               = {isa = PBXBuildFile; fileRef = C018; };
+        D019 /* ChatBubble.swift in Sources */                  = {isa = PBXBuildFile; fileRef = C019; };
+        D020 /* ProposedTransactionCard.swift in Sources */     = {isa = PBXBuildFile; fileRef = C020; };
+        D021 /* AddSubscriptionView.swift in Sources */         = {isa = PBXBuildFile; fileRef = C021; };
+        D022 /* BudgetListView.swift in Sources */              = {isa = PBXBuildFile; fileRef = C022; };
+        D023 /* SetBudgetView.swift in Sources */               = {isa = PBXBuildFile; fileRef = C023; };
+        D024 /* SetCashBudgetView.swift in Sources */           = {isa = PBXBuildFile; fileRef = C024; };
+        D025 /* BankBalanceCard.swift in Sources */             = {isa = PBXBuildFile; fileRef = C025; };
+        D026 /* CashBudgetCard.swift in Sources */              = {isa = PBXBuildFile; fileRef = C026; };
+        D027 /* DashboardView.swift in Sources */               = {isa = PBXBuildFile; fileRef = C027; };
+        D028 /* RootView.swift in Sources */                    = {isa = PBXBuildFile; fileRef = C028; };
+        D029 /* LinkBankView.swift in Sources */                = {isa = PBXBuildFile; fileRef = C029; };
+        D030 /* SettingsView.swift in Sources */                = {isa = PBXBuildFile; fileRef = C030; };
+        D031 /* APIKeySheet.swift in Sources */                 = {isa = PBXBuildFile; fileRef = C031; };
+        D032 /* CategoryPickerView.swift in Sources */          = {isa = PBXBuildFile; fileRef = C032; };
+        D033 /* CurrencyTextField.swift in Sources */           = {isa = PBXBuildFile; fileRef = C033; };
+        D034 /* AddTransactionView.swift in Sources */          = {isa = PBXBuildFile; fileRef = C034; };
+        D035 /* TransactionListView.swift in Sources */         = {isa = PBXBuildFile; fileRef = C035; };
+        D036 /* TransactionRow.swift in Sources */              = {isa = PBXBuildFile; fileRef = C036; };
+        D037 /* AddAccountView.swift in Sources */              = {isa = PBXBuildFile; fileRef = C037; };
+        D038 /* AddAssetView.swift in Sources */                = {isa = PBXBuildFile; fileRef = C038; };
+        D039 /* AddContributionView.swift in Sources */         = {isa = PBXBuildFile; fileRef = C039; };
+        D040 /* AddLiabilityView.swift in Sources */            = {isa = PBXBuildFile; fileRef = C040; };
+        D041 /* ContributionHistoryView.swift in Sources */     = {isa = PBXBuildFile; fileRef = C041; };
+        D042 /* InvestmentAccountRow.swift in Sources */        = {isa = PBXBuildFile; fileRef = C042; };
+        D043 /* InvestmentsView.swift in Sources */             = {isa = PBXBuildFile; fileRef = C043; };
+        D044 /* ManageAccountsView.swift in Sources */          = {isa = PBXBuildFile; fileRef = C044; };
+        D045 /* NetWorthView.swift in Sources */                = {isa = PBXBuildFile; fileRef = C045; };
+        D046 /* WealthView.swift in Sources */                  = {isa = PBXBuildFile; fileRef = C046; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,12 +73,61 @@
         A006 /* Info.plist */             = {isa = PBXFileReference; lastKnownFileType = text.plist.xml;   name = Info.plist;             path = AppBlocker/Info.plist;             sourceTree = "<group>"; };
         A007 /* AppBlocker.entitlements */= {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AppBlocker.entitlements; path = AppBlocker/AppBlocker.entitlements; sourceTree = "<group>"; };
         PROD /* AppBlocker.app */         = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        C001 /* BudgetBuddyApp.swift */             = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetBuddyApp.swift;             path = BudgetBuddy/BudgetBuddyApp.swift;                           sourceTree = "<group>"; };
+        C002 /* BudgetLimit.swift */                = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetLimit.swift;                path = BudgetBuddy/Models/BudgetLimit.swift;                       sourceTree = "<group>"; };
+        C003 /* CashBudget.swift */                 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CashBudget.swift;                 path = BudgetBuddy/Models/CashBudget.swift;                        sourceTree = "<group>"; };
+        C004 /* Category.swift */                   = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Category.swift;                   path = BudgetBuddy/Models/Category.swift;                          sourceTree = "<group>"; };
+        C005 /* InvestmentAccount.swift */          = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InvestmentAccount.swift;          path = BudgetBuddy/Models/InvestmentAccount.swift;                 sourceTree = "<group>"; };
+        C006 /* InvestmentContribution.swift */     = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InvestmentContribution.swift;     path = BudgetBuddy/Models/InvestmentContribution.swift;            sourceTree = "<group>"; };
+        C007 /* LinkedAccount.swift */              = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinkedAccount.swift;              path = BudgetBuddy/Models/LinkedAccount.swift;                     sourceTree = "<group>"; };
+        C008 /* NetWorth.swift */                   = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetWorth.swift;                   path = BudgetBuddy/Models/NetWorth.swift;                          sourceTree = "<group>"; };
+        C009 /* PaymentMethod.swift */              = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaymentMethod.swift;              path = BudgetBuddy/Models/PaymentMethod.swift;                     sourceTree = "<group>"; };
+        C010 /* ProposedTransaction.swift */        = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProposedTransaction.swift;        path = BudgetBuddy/Models/ProposedTransaction.swift;               sourceTree = "<group>"; };
+        C011 /* Subscription.swift */               = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Subscription.swift;               path = BudgetBuddy/Models/Subscription.swift;                      sourceTree = "<group>"; };
+        C012 /* Transaction.swift */                = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Transaction.swift;                path = BudgetBuddy/Models/Transaction.swift;                       sourceTree = "<group>"; };
+        C013 /* BudgetClaudeService.swift */        = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetClaudeService.swift;        path = BudgetBuddy/Services/BudgetClaudeService.swift;             sourceTree = "<group>"; };
+        C014 /* PlaidCategoryMapper.swift */        = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaidCategoryMapper.swift;        path = BudgetBuddy/Services/PlaidCategoryMapper.swift;             sourceTree = "<group>"; };
+        C015 /* PlaidService.swift */               = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaidService.swift;               path = BudgetBuddy/Services/PlaidService.swift;                    sourceTree = "<group>"; };
+        C016 /* BudgetStore.swift */                = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetStore.swift;                path = BudgetBuddy/Stores/BudgetStore.swift;                       sourceTree = "<group>"; };
+        C017 /* PersistenceStore.swift */           = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersistenceStore.swift;           path = BudgetBuddy/Stores/PersistenceStore.swift;                  sourceTree = "<group>"; };
+        C018 /* AssistantView.swift */              = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssistantView.swift;              path = BudgetBuddy/Views/Assistant/AssistantView.swift;            sourceTree = "<group>"; };
+        C019 /* ChatBubble.swift */                 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatBubble.swift;                 path = BudgetBuddy/Views/Assistant/ChatBubble.swift;               sourceTree = "<group>"; };
+        C020 /* ProposedTransactionCard.swift */    = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProposedTransactionCard.swift;    path = BudgetBuddy/Views/Assistant/ProposedTransactionCard.swift;   sourceTree = "<group>"; };
+        C021 /* AddSubscriptionView.swift */        = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddSubscriptionView.swift;        path = BudgetBuddy/Views/Budgets/AddSubscriptionView.swift;        sourceTree = "<group>"; };
+        C022 /* BudgetListView.swift */             = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetListView.swift;             path = BudgetBuddy/Views/Budgets/BudgetListView.swift;             sourceTree = "<group>"; };
+        C023 /* SetBudgetView.swift */              = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetBudgetView.swift;              path = BudgetBuddy/Views/Budgets/SetBudgetView.swift;              sourceTree = "<group>"; };
+        C024 /* SetCashBudgetView.swift */          = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetCashBudgetView.swift;          path = BudgetBuddy/Views/Budgets/SetCashBudgetView.swift;          sourceTree = "<group>"; };
+        C025 /* BankBalanceCard.swift */            = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BankBalanceCard.swift;            path = BudgetBuddy/Views/Dashboard/BankBalanceCard.swift;          sourceTree = "<group>"; };
+        C026 /* CashBudgetCard.swift */             = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CashBudgetCard.swift;             path = BudgetBuddy/Views/Dashboard/CashBudgetCard.swift;           sourceTree = "<group>"; };
+        C027 /* DashboardView.swift */              = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardView.swift;              path = BudgetBuddy/Views/Dashboard/DashboardView.swift;            sourceTree = "<group>"; };
+        C028 /* RootView.swift */                   = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootView.swift;                   path = BudgetBuddy/Views/RootView.swift;                           sourceTree = "<group>"; };
+        C029 /* LinkBankView.swift */               = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinkBankView.swift;               path = BudgetBuddy/Views/Settings/LinkBankView.swift;              sourceTree = "<group>"; };
+        C030 /* SettingsView.swift */               = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift;               path = BudgetBuddy/Views/Settings/SettingsView.swift;              sourceTree = "<group>"; };
+        C031 /* APIKeySheet.swift */                = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIKeySheet.swift;                path = BudgetBuddy/Views/Shared/APIKeySheet.swift;                 sourceTree = "<group>"; };
+        C032 /* CategoryPickerView.swift */         = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryPickerView.swift;         path = BudgetBuddy/Views/Shared/CategoryPickerView.swift;          sourceTree = "<group>"; };
+        C033 /* CurrencyTextField.swift */          = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrencyTextField.swift;          path = BudgetBuddy/Views/Shared/CurrencyTextField.swift;           sourceTree = "<group>"; };
+        C034 /* AddTransactionView.swift */         = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTransactionView.swift;         path = BudgetBuddy/Views/Transactions/AddTransactionView.swift;    sourceTree = "<group>"; };
+        C035 /* TransactionListView.swift */        = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionListView.swift;        path = BudgetBuddy/Views/Transactions/TransactionListView.swift;   sourceTree = "<group>"; };
+        C036 /* TransactionRow.swift */             = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionRow.swift;             path = BudgetBuddy/Views/Transactions/TransactionRow.swift;        sourceTree = "<group>"; };
+        C037 /* AddAccountView.swift */             = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddAccountView.swift;             path = BudgetBuddy/Views/Wealth/AddAccountView.swift;              sourceTree = "<group>"; };
+        C038 /* AddAssetView.swift */               = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddAssetView.swift;               path = BudgetBuddy/Views/Wealth/AddAssetView.swift;                sourceTree = "<group>"; };
+        C039 /* AddContributionView.swift */        = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddContributionView.swift;        path = BudgetBuddy/Views/Wealth/AddContributionView.swift;         sourceTree = "<group>"; };
+        C040 /* AddLiabilityView.swift */           = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddLiabilityView.swift;           path = BudgetBuddy/Views/Wealth/AddLiabilityView.swift;            sourceTree = "<group>"; };
+        C041 /* ContributionHistoryView.swift */    = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContributionHistoryView.swift;    path = BudgetBuddy/Views/Wealth/ContributionHistoryView.swift;     sourceTree = "<group>"; };
+        C042 /* InvestmentAccountRow.swift */       = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InvestmentAccountRow.swift;       path = BudgetBuddy/Views/Wealth/InvestmentAccountRow.swift;        sourceTree = "<group>"; };
+        C043 /* InvestmentsView.swift */            = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InvestmentsView.swift;            path = BudgetBuddy/Views/Wealth/InvestmentsView.swift;             sourceTree = "<group>"; };
+        C044 /* ManageAccountsView.swift */         = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ManageAccountsView.swift;         path = BudgetBuddy/Views/Wealth/ManageAccountsView.swift;          sourceTree = "<group>"; };
+        C045 /* NetWorthView.swift */               = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetWorthView.swift;               path = BudgetBuddy/Views/Wealth/NetWorthView.swift;                sourceTree = "<group>"; };
+        C046 /* WealthView.swift */                 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WealthView.swift;                 path = BudgetBuddy/Views/Wealth/WealthView.swift;                  sourceTree = "<group>"; };
+        C047 /* Info.plist (BudgetBuddy) */         = {isa = PBXFileReference; lastKnownFileType = text.plist.xml;          name = Info.plist;           path = BudgetBuddy/Info.plist;            sourceTree = "<group>"; };
+        C048 /* BudgetBuddy.entitlements */         = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BudgetBuddy.entitlements; path = BudgetBuddy/BudgetBuddy.entitlements; sourceTree = "<group>"; };
+        BUD_PROD /* BudgetBuddy.app */              = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
         ROOT = {
             isa = PBXGroup;
-            children = (SRC, PRODUCTS);
+            children = (SRC, BUD_ROOT, PRODUCTS);
             sourceTree = "<group>";
         };
         SRC /* AppBlocker */ = {
@@ -43,8 +138,80 @@
         };
         PRODUCTS /* Products */ = {
             isa = PBXGroup;
-            children = (PROD);
+            children = (PROD, BUD_PROD);
             name = Products;
+            sourceTree = "<group>";
+        };
+        BUD_ROOT /* BudgetBuddy */ = {
+            isa = PBXGroup;
+            children = (C001, C047, C048, BUD_MODELS, BUD_STORES, BUD_SERVICES, BUD_VIEWS);
+            name = BudgetBuddy;
+            sourceTree = "<group>";
+        };
+        BUD_MODELS /* Models */ = {
+            isa = PBXGroup;
+            children = (C002, C003, C004, C005, C006, C007, C008, C009, C010, C011, C012);
+            name = Models;
+            sourceTree = "<group>";
+        };
+        BUD_STORES /* Stores */ = {
+            isa = PBXGroup;
+            children = (C016, C017);
+            name = Stores;
+            sourceTree = "<group>";
+        };
+        BUD_SERVICES /* Services */ = {
+            isa = PBXGroup;
+            children = (C013, C014, C015);
+            name = Services;
+            sourceTree = "<group>";
+        };
+        BUD_VIEWS /* Views */ = {
+            isa = PBXGroup;
+            children = (C028, BUD_VIEWS_ASSISTANT, BUD_VIEWS_BUDGETS, BUD_VIEWS_DASH, BUD_VIEWS_SETTINGS, BUD_VIEWS_SHARED, BUD_VIEWS_TXN, BUD_VIEWS_WEALTH);
+            name = Views;
+            sourceTree = "<group>";
+        };
+        BUD_VIEWS_ASSISTANT /* Assistant */ = {
+            isa = PBXGroup;
+            children = (C018, C019, C020);
+            name = Assistant;
+            sourceTree = "<group>";
+        };
+        BUD_VIEWS_BUDGETS /* Budgets */ = {
+            isa = PBXGroup;
+            children = (C021, C022, C023, C024);
+            name = Budgets;
+            sourceTree = "<group>";
+        };
+        BUD_VIEWS_DASH /* Dashboard */ = {
+            isa = PBXGroup;
+            children = (C025, C026, C027);
+            name = Dashboard;
+            sourceTree = "<group>";
+        };
+        BUD_VIEWS_SETTINGS /* Settings */ = {
+            isa = PBXGroup;
+            children = (C029, C030);
+            name = Settings;
+            sourceTree = "<group>";
+        };
+        BUD_VIEWS_SHARED /* Shared */ = {
+            isa = PBXGroup;
+            children = (C031, C032, C033);
+            name = Shared;
+            sourceTree = "<group>";
+        };
+        BUD_VIEWS_TXN /* Transactions */ = {
+            isa = PBXGroup;
+            children = (C034, C035, C036);
+            name = Transactions;
+            sourceTree = "<group>";
+        };
+        BUD_VIEWS_WEALTH /* Wealth */ = {
+            isa = PBXGroup;
+            children = (C037, C038, C039, C040, C041, C042, C043, C044, C045, C046);
+            name = Wealth;
             sourceTree = "<group>";
         };
 /* End PBXGroup section */
@@ -61,6 +228,17 @@
             productReference = PROD;
             productType = "com.apple.product-type.application";
         };
+        BUD_TGT /* BudgetBuddy */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = CFGLIST_BUD;
+            buildPhases = (BUD_SOURCES);
+            buildRules = ();
+            dependencies = ();
+            name = BudgetBuddy;
+            productName = BudgetBuddy;
+            productReference = BUD_PROD;
+            productType = "com.apple.product-type.application";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -74,6 +252,9 @@
                     TGT = {
                         CreatedOnToolsVersion = 15.0;
                     };
+                    BUD_TGT = {
+                        CreatedOnToolsVersion = 15.0;
+                    };
                 };
             };
             buildConfigurationList = CFGLIST_PROJ;
@@ -85,7 +266,7 @@
             productRefGroup = PRODUCTS;
             projectDirPath = "";
             projectRoot = "";
-            targets = (TGT);
+            targets = (TGT, BUD_TGT);
         };
 /* End PBXProject section */
 
@@ -94,6 +275,19 @@
             isa = PBXSourcesBuildPhase;
             buildActionMask = 2147483647;
             files = (B001, B002, B003, B004, B005, B006, B007);
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        BUD_SOURCES /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                D001, D002, D003, D004, D005, D006, D007, D008,
+                D009, D010, D011, D012, D013, D014, D015, D016,
+                D017, D018, D019, D020, D021, D022, D023, D024,
+                D025, D026, D027, D028, D029, D030, D031, D032,
+                D033, D034, D035, D036, D037, D038, D039, D040,
+                D041, D042, D043, D044, D045, D046
+            );
             runOnlyForDeploymentPostprocessing = 0;
         };
 /* End PBXSourcesBuildPhase section */
@@ -187,6 +381,57 @@
             };
             name = Release;
         };
+        CFG_BUD_DEBUG /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+                CODE_SIGN_ENTITLEMENTS = BudgetBuddy/BudgetBuddy.entitlements;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                DEVELOPMENT_ASSET_PATHS = "";
+                GENERATE_INFOPLIST_FILE = NO;
+                INFOPLIST_FILE = BudgetBuddy/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+                MARKETING_VERSION = 1.0.0;
+                PRODUCT_BUNDLE_IDENTIFIER = com.example.budgetbuddy;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+                SUPPORTS_MACCATALYST = YES;
+                SWIFT_EMIT_LOC_STRINGS = YES;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Debug;
+        };
+        CFG_BUD_RELEASE /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+                CODE_SIGN_ENTITLEMENTS = BudgetBuddy/BudgetBuddy.entitlements;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                DEVELOPMENT_ASSET_PATHS = "";
+                GENERATE_INFOPLIST_FILE = NO;
+                INFOPLIST_FILE = BudgetBuddy/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+                MARKETING_VERSION = 1.0.0;
+                PRODUCT_BUNDLE_IDENTIFIER = com.example.budgetbuddy;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+                SUPPORTS_MACCATALYST = YES;
+                SWIFT_EMIT_LOC_STRINGS = YES;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+                SWIFT_COMPILATION_MODE = wholemodule;
+                SWIFT_OPTIMIZATION_LEVEL = "-O";
+                VALIDATE_PRODUCT = YES;
+            };
+            name = Release;
+        };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -199,6 +444,12 @@
         CFGLIST_TGT /* Build configuration list for PBXNativeTarget "AppBlocker" */ = {
             isa = XCConfigurationList;
             buildConfigurations = (CFG_TGT_DEBUG, CFG_TGT_RELEASE);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        CFGLIST_BUD /* Build configuration list for PBXNativeTarget "BudgetBuddy" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (CFG_BUD_DEBUG, CFG_BUD_RELEASE);
             defaultConfigurationIsVisible = 0;
             defaultConfigurationName = Release;
         };
