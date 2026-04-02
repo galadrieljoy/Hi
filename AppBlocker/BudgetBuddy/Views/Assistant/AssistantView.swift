@@ -40,7 +40,7 @@ struct AssistantView: View {
                         }
                         .padding()
                     }
-                    .onChange(of: messages.count) { _ in
+                    .onChange(of: messages.count) { _, _ in
                         withAnimation { proxy.scrollTo(messages.count - 1) }
                     }
                 }

@@ -59,11 +59,7 @@ class BudgetStore: ObservableObject {
     }
 
     private func resolvedURLSync(_ filename: String) -> URL? {
-        if let icloud = FileManager.default
-            .url(forUbiquityContainerIdentifier: nil)?
-            .appendingPathComponent("Documents/\(filename)") {
-            return icloud
-        }
+        // iCloud unavailable (no entitlement on free Apple ID) — use local Documents
         let local = FileManager.default
             .urls(for: .documentDirectory, in: .userDomainMask)[0]
             .appendingPathComponent(filename)
