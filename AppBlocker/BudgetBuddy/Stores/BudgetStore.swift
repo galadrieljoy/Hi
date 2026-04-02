@@ -18,29 +18,8 @@ class BudgetStore: ObservableObject {
     @Published var liabilities:            [Liability]              = []
     @Published var netWorthHistory:        [NetWorthSnapshot]       = []
 
-    private var metadataQuery: NSMetadataQuery?
-
     init() {
         loadAll()
-        setupMetadataQuery()
-    }
-
-    // MARK: - iCloud change detection
-
-    private func setupMetadataQuery() {
-        // Only set up iCloud change detection when iCloud is actually available
-        guard FileManager.default.url(forUbiquityContainerIdentifier: nil) != nil else { return }
-        let q = NSMetadataQuery()
-        q.searchScopes = [NSMetadataQueryUbiquitousDocumentsScope]
-        q.predicate = NSPredicate(format: "%K LIKE '*.json'", NSMetadataItemFSNameKey)
-        NotificationCenter.default.addObserver(
-            forName: .NSMetadataQueryDidUpdate,
-            object: q, queue: .main
-        ) { [weak self] _ in
-            self?.loadAll()
-        }
-        q.start()
-        metadataQuery = q
     }
 
     // MARK: - Persistence helpers
