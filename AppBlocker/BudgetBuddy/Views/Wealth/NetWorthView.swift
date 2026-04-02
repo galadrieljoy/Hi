@@ -56,7 +56,7 @@ struct NetWorthView: View {
                 .foregroundStyle(.secondary)
             Text("$\(String(format: "%.2f", netWorth))")
                 .font(.largeTitle.bold().monospacedDigit())
-                .foregroundStyle(netWorth >= 0 ? .primary : .red)
+                .foregroundStyle(netWorth >= 0 ? Color.primary : Color.red)
 
             HStack(spacing: 24) {
                 VStack(spacing: 2) {
