@@ -263,7 +263,8 @@ class BlockingManager: ObservableObject {
     private func applyBlackoutBlocking() {
         #if os(iOS)
         // Block all app categories; individual app exemptions not supported by iOS API
-        store.shield.applicationCategories = .all(except: alwaysFreeSelection.categoryTokens)
+        // Block all categories during blackout (always-free exemptions are macOS-only due to iOS API limits)
+        store.shield.applicationCategories = .all(except: Set())
         #elseif os(macOS)
         applyMacOSBlackoutBlocking()
         #endif

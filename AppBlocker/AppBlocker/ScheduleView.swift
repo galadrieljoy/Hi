@@ -21,7 +21,7 @@ struct ScheduleView: View {
                 // MARK: Regular Schedule
                 Section {
                     Toggle("Enable Daily Schedule", isOn: $manager.scheduleEnabled)
-                        .onChange(of: manager.scheduleEnabled) { _, enabled in
+                        .onChange(of: manager.scheduleEnabled) { enabled in
                             if enabled { applySchedule() } else { manager.cancelSchedule() }
                         }
                 } footer: {
