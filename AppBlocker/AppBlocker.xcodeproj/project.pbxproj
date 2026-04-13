@@ -7,6 +7,7 @@
     objects = {
 
 /* Begin PBXBuildFile section */
+        /* iOS target build files */
         B001 /* AppBlockerApp.swift in Sources */       = {isa = PBXBuildFile; fileRef = A001; };
         B002 /* ContentView.swift in Sources */         = {isa = PBXBuildFile; fileRef = A002; };
         B003 /* BlockingManager.swift in Sources */     = {isa = PBXBuildFile; fileRef = A003; };
@@ -14,19 +15,33 @@
         B005 /* ScheduleView.swift in Sources */        = {isa = PBXBuildFile; fileRef = A005; };
         B006 /* ClaudeService.swift in Sources */       = {isa = PBXBuildFile; fileRef = A008; };
         B007 /* OverrideView.swift in Sources */        = {isa = PBXBuildFile; fileRef = A009; };
+        B008 /* EarnView.swift in Sources */            = {isa = PBXBuildFile; fileRef = A010; };
+        /* macOS target build files */
+        C001 /* AppBlockerApp.swift in Sources */       = {isa = PBXBuildFile; fileRef = A001; };
+        C002 /* ContentView.swift in Sources */         = {isa = PBXBuildFile; fileRef = A002; };
+        C003 /* BlockingManager.swift in Sources */     = {isa = PBXBuildFile; fileRef = A003; };
+        C004 /* AppSelectionView.swift in Sources */    = {isa = PBXBuildFile; fileRef = A004; };
+        C005 /* ScheduleView.swift in Sources */        = {isa = PBXBuildFile; fileRef = A005; };
+        C006 /* ClaudeService.swift in Sources */       = {isa = PBXBuildFile; fileRef = A008; };
+        C007 /* OverrideView.swift in Sources */        = {isa = PBXBuildFile; fileRef = A009; };
+        C008 /* EarnView.swift in Sources */            = {isa = PBXBuildFile; fileRef = A010; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-        A001 /* AppBlockerApp.swift */    = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppBlockerApp.swift;    path = AppBlocker/AppBlockerApp.swift;    sourceTree = "<group>"; };
-        A002 /* ContentView.swift */      = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift;      path = AppBlocker/ContentView.swift;      sourceTree = "<group>"; };
-        A003 /* BlockingManager.swift */  = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlockingManager.swift;  path = AppBlocker/BlockingManager.swift;  sourceTree = "<group>"; };
-        A004 /* AppSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppSelectionView.swift; path = AppBlocker/AppSelectionView.swift; sourceTree = "<group>"; };
-        A005 /* ScheduleView.swift */     = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleView.swift;     path = AppBlocker/ScheduleView.swift;     sourceTree = "<group>"; };
-        A008 /* ClaudeService.swift */    = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClaudeService.swift;    path = AppBlocker/ClaudeService.swift;    sourceTree = "<group>"; };
-        A009 /* OverrideView.swift */     = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OverrideView.swift;     path = AppBlocker/OverrideView.swift;     sourceTree = "<group>"; };
-        A006 /* Info.plist */             = {isa = PBXFileReference; lastKnownFileType = text.plist.xml;   name = Info.plist;             path = AppBlocker/Info.plist;             sourceTree = "<group>"; };
-        A007 /* AppBlocker.entitlements */= {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AppBlocker.entitlements; path = AppBlocker/AppBlocker.entitlements; sourceTree = "<group>"; };
-        PROD /* AppBlocker.app */         = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        A001 /* AppBlockerApp.swift */         = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift;          name = AppBlockerApp.swift;         path = AppBlocker/AppBlockerApp.swift;         sourceTree = "<group>"; };
+        A002 /* ContentView.swift */           = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift;          name = ContentView.swift;           path = AppBlocker/ContentView.swift;           sourceTree = "<group>"; };
+        A003 /* BlockingManager.swift */       = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift;          name = BlockingManager.swift;       path = AppBlocker/BlockingManager.swift;       sourceTree = "<group>"; };
+        A004 /* AppSelectionView.swift */      = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift;          name = AppSelectionView.swift;      path = AppBlocker/AppSelectionView.swift;      sourceTree = "<group>"; };
+        A005 /* ScheduleView.swift */          = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift;          name = ScheduleView.swift;          path = AppBlocker/ScheduleView.swift;          sourceTree = "<group>"; };
+        A008 /* ClaudeService.swift */         = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift;          name = ClaudeService.swift;         path = AppBlocker/ClaudeService.swift;         sourceTree = "<group>"; };
+        A009 /* OverrideView.swift */          = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift;          name = OverrideView.swift;          path = AppBlocker/OverrideView.swift;          sourceTree = "<group>"; };
+        A010 /* EarnView.swift */              = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift;          name = EarnView.swift;              path = AppBlocker/EarnView.swift;              sourceTree = "<group>"; };
+        A006 /* Info.plist */                  = {isa = PBXFileReference; lastKnownFileType = text.plist.xml;            name = Info.plist;                  path = AppBlocker/Info.plist;                  sourceTree = "<group>"; };
+        A007 /* AppBlocker.entitlements */     = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements;  name = AppBlocker.entitlements;     path = AppBlocker/AppBlocker.entitlements;     sourceTree = "<group>"; };
+        A011 /* AppBlockerMac.entitlements */  = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements;  name = AppBlockerMac.entitlements;  path = AppBlocker/AppBlockerMac.entitlements;  sourceTree = "<group>"; };
+        A012 /* Info-macOS.plist */            = {isa = PBXFileReference; lastKnownFileType = text.plist.xml;           name = Info-macOS.plist;            path = AppBlocker/Info-macOS.plist;            sourceTree = "<group>"; };
+        PROD     /* AppBlocker.app (iOS) */    = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBlocker.app;       sourceTree = BUILT_PRODUCTS_DIR; };
+        PROD_MAC /* AppBlocker.app (macOS) */  = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBlockerMac.app;    sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -37,20 +52,33 @@
         };
         SRC /* AppBlocker */ = {
             isa = PBXGroup;
-            children = (A001, A002, A003, A004, A005, A006, A007, A008, A009);
+            children = (
+                A001, /* AppBlockerApp.swift */
+                A002, /* ContentView.swift */
+                A003, /* BlockingManager.swift */
+                A004, /* AppSelectionView.swift */
+                A005, /* ScheduleView.swift */
+                A008, /* ClaudeService.swift */
+                A009, /* OverrideView.swift */
+                A010, /* EarnView.swift */
+                A006, /* Info.plist */
+                A007, /* AppBlocker.entitlements */
+                A011, /* AppBlockerMac.entitlements */
+                A012, /* Info-macOS.plist */
+            );
             name = AppBlocker;
             sourceTree = "<group>";
         };
         PRODUCTS /* Products */ = {
             isa = PBXGroup;
-            children = (PROD);
+            children = (PROD, PROD_MAC);
             name = Products;
             sourceTree = "<group>";
         };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-        TGT /* AppBlocker */ = {
+        TGT /* AppBlocker (iOS) */ = {
             isa = PBXNativeTarget;
             buildConfigurationList = CFGLIST_TGT;
             buildPhases = (SOURCES);
@@ -59,6 +87,17 @@
             name = AppBlocker;
             productName = AppBlocker;
             productReference = PROD;
+            productType = "com.apple.product-type.application";
+        };
+        TGT_MAC /* AppBlocker (macOS) */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = CFGLIST_MAC;
+            buildPhases = (SOURCES_MAC);
+            buildRules = ();
+            dependencies = ();
+            name = "AppBlocker (macOS)";
+            productName = AppBlockerMac;
+            productReference = PROD_MAC;
             productType = "com.apple.product-type.application";
         };
 /* End PBXNativeTarget section */
@@ -74,6 +113,9 @@
                     TGT = {
                         CreatedOnToolsVersion = 15.0;
                     };
+                    TGT_MAC = {
+                        CreatedOnToolsVersion = 15.0;
+                    };
                 };
             };
             buildConfigurationList = CFGLIST_PROJ;
@@ -85,15 +127,21 @@
             productRefGroup = PRODUCTS;
             projectDirPath = "";
             projectRoot = "";
-            targets = (TGT);
+            targets = (TGT, TGT_MAC);
         };
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-        SOURCES /* Sources */ = {
+        SOURCES /* Sources (iOS) */ = {
             isa = PBXSourcesBuildPhase;
             buildActionMask = 2147483647;
-            files = (B001, B002, B003, B004, B005, B006, B007);
+            files = (B001, B002, B003, B004, B005, B006, B007, B008);
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        SOURCES_MAC /* Sources (macOS) */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (C001, C002, C003, C004, C005, C006, C007, C008);
             runOnlyForDeploymentPostprocessing = 0;
         };
 /* End PBXSourcesBuildPhase section */
@@ -116,7 +164,6 @@
                 MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
                 MTL_FAST_MATH = YES;
                 ONLY_ACTIVE_ARCH = YES;
-                SDKROOT = iphoneos;
                 SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
                 SWIFT_OPTIMIZATION_LEVEL = "-Onone";
             };
@@ -136,14 +183,13 @@
                 GCC_OPTIMIZATION_LEVEL = s;
                 MTL_ENABLE_DEBUG_INFO = NO;
                 MTL_FAST_MATH = YES;
-                SDKROOT = iphoneos;
                 SWIFT_COMPILATION_MODE = wholemodule;
                 SWIFT_OPTIMIZATION_LEVEL = "-O";
                 VALIDATE_PRODUCT = YES;
             };
             name = Release;
         };
-        CFG_TGT_DEBUG /* Debug */ = {
+        CFG_TGT_DEBUG /* Debug (iOS) */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
                 ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -156,16 +202,17 @@
                 INFOPLIST_FILE = AppBlocker/Info.plist;
                 IPHONEOS_DEPLOYMENT_TARGET = 16.0;
                 LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
-                MARKETING_VERSION = 1.0.0;
+                MARKETING_VERSION = 2.0.0;
                 PRODUCT_BUNDLE_IDENTIFIER = com.example.appblocker;
                 PRODUCT_NAME = "$(TARGET_NAME)";
+                SDKROOT = iphoneos;
                 SWIFT_EMIT_LOC_STRINGS = YES;
                 SWIFT_VERSION = 5.0;
                 TARGETED_DEVICE_FAMILY = "1,2";
             };
             name = Debug;
         };
-        CFG_TGT_RELEASE /* Release */ = {
+        CFG_TGT_RELEASE /* Release (iOS) */ = {
             isa = XCBuildConfiguration;
             buildSettings = {
                 ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -177,13 +224,58 @@
                 GENERATE_INFOPLIST_FILE = NO;
                 INFOPLIST_FILE = AppBlocker/Info.plist;
                 IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-                LD_RUNPATH_SEARCH_CALLS = ("$(inherited)", "@executable_path/Frameworks");
-                MARKETING_VERSION = 1.0.0;
+                LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+                MARKETING_VERSION = 2.0.0;
                 PRODUCT_BUNDLE_IDENTIFIER = com.example.appblocker;
                 PRODUCT_NAME = "$(TARGET_NAME)";
+                SDKROOT = iphoneos;
                 SWIFT_EMIT_LOC_STRINGS = YES;
                 SWIFT_VERSION = 5.0;
                 TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Release;
+        };
+        CFG_MAC_DEBUG /* Debug (macOS) */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+                CODE_SIGN_ENTITLEMENTS = AppBlocker/AppBlockerMac.entitlements;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                DEVELOPMENT_ASSET_PATHS = "";
+                GENERATE_INFOPLIST_FILE = NO;
+                INFOPLIST_FILE = AppBlocker/Info-macOS.plist;
+                LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+                MACOSX_DEPLOYMENT_TARGET = 13.0;
+                MARKETING_VERSION = 2.0.0;
+                PRODUCT_BUNDLE_IDENTIFIER = com.example.appblocker.mac;
+                PRODUCT_NAME = AppBlockerMac;
+                SDKROOT = macosx;
+                SWIFT_EMIT_LOC_STRINGS = YES;
+                SWIFT_VERSION = 5.0;
+            };
+            name = Debug;
+        };
+        CFG_MAC_RELEASE /* Release (macOS) */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+                CODE_SIGN_ENTITLEMENTS = AppBlocker/AppBlockerMac.entitlements;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                DEVELOPMENT_ASSET_PATHS = "";
+                GENERATE_INFOPLIST_FILE = NO;
+                INFOPLIST_FILE = AppBlocker/Info-macOS.plist;
+                LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+                MACOSX_DEPLOYMENT_TARGET = 13.0;
+                MARKETING_VERSION = 2.0.0;
+                PRODUCT_BUNDLE_IDENTIFIER = com.example.appblocker.mac;
+                PRODUCT_NAME = AppBlockerMac;
+                SDKROOT = macosx;
+                SWIFT_EMIT_LOC_STRINGS = YES;
+                SWIFT_VERSION = 5.0;
             };
             name = Release;
         };
@@ -196,9 +288,15 @@
             defaultConfigurationIsVisible = 0;
             defaultConfigurationName = Release;
         };
-        CFGLIST_TGT /* Build configuration list for PBXNativeTarget "AppBlocker" */ = {
+        CFGLIST_TGT /* Build configuration list for PBXNativeTarget "AppBlocker" (iOS) */ = {
             isa = XCConfigurationList;
             buildConfigurations = (CFG_TGT_DEBUG, CFG_TGT_RELEASE);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        CFGLIST_MAC /* Build configuration list for PBXNativeTarget "AppBlocker (macOS)" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (CFG_MAC_DEBUG, CFG_MAC_RELEASE);
             defaultConfigurationIsVisible = 0;
             defaultConfigurationName = Release;
         };
